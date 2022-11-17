@@ -87,11 +87,11 @@ The aim of LDA is to find topics a document belongs to, based on the pre-process
 
 - Direct output: We obtained the k most relevant topics, along with the keywords in each topic and their scores.
 
-  <img src="/Users/yfsong/Library/Application Support/typora-user-images/image-20221117191916843.png" alt="image-20221117191916843"  />
+  <img src="./images/m2_LDAres.png"  />
 
 - Visualization: We get more intuitive dynamic results with the help of the **pyLDAvis** package. (This result is not directly displayed on github, due to the dynamic image)
 
-  ![image-20221117192144523](/Users/yfsong/Library/Application Support/typora-user-images/image-20221117192144523.png)
+  ![image-vis_LDA](./images/m2_pyLDAvis.png)
 
 ## Proposed timeline
 
