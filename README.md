@@ -57,7 +57,7 @@ We would like to know which words appear in high frequency in all the movie name
 
 We make a **wordcloud** with all movie names, which indicates the hottest words.
 
-<img src="/Users/yfsong/Desktop/EPFL/Ada/ADA2022/Project/ada-2022-project-datakungfu/images/movie_title1.png" alt="movie_title1" style="zoom:80%;" />
+<img src="./images/movie_title1.png" />
 
 
 
