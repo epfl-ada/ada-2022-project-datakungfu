@@ -57,7 +57,7 @@ We would like to know which words appear in high frequency in all the movie name
 
 We make a **wordcloud** with all movie names, which indicates the hottest words.
 
-<img src="/Users/yfsong/Desktop/EPFL/Ada/ADA2022/Project/ada-2022-project-datakungfu/images/movie_title1.png" alt="movie_title1" style="zoom:80%;" />
+<img src="./images/movie_title1.png" />
 
 ### Topic Retrieval
 
@@ -85,11 +85,11 @@ LDA(Latent Dirichlet allocation) is to find topics a document belongs to, based 
 
 - Direct output: We obtained the k most relevant topics, along with the keywords in each topic and their scores.
 
-  <img src="/Users/yfsong/Library/Application Support/typora-user-images/image-20221117191916843.png" alt="image-20221117191916843"  />
+  <img src="./images/m2_LDAres.png"  />
 
 - Visualization: We get more intuitive dynamic results with the help of the **pyLDAvis** package. (This result is not directly displayed on github, due to the dynamic image)
 
-  ![image-20221117192144523](/Users/yfsong/Library/Application Support/typora-user-images/image-20221117192144523.png)
+  ![image-vis_LDA](./images/m2_pyLDAvis.png)
 
 ## Proposed timeline
 
