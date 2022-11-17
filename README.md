@@ -24,7 +24,7 @@ In our data story, readers can understand what and how impacts film revenue, and
 
 ## Proposed additional datasets
 
-- [Name Corpus](https://www.kaggle.com/datasets/nltkdata/names?resource=download) - a dataset containing male and female names, which is used to handle plot summary topic analysis tasks such as gendering characters.
+- [Name Corpus](https://www.kaggle.com/datasets/nltkdata/names?resource=download) - a dataset containing male and female names, which is used to remove common English names when we do plot summary topic analysis tasks. High-frequency English names are similar to stopwords in text analysis. In order not to have people's names without real meaning in the analysis results, we need to remove them from the text in the pre-processing stage.
 
 ## Methods
 
@@ -77,7 +77,7 @@ LDA is to find topics a document belongs to, based on the pre-processed words in
 
   - Update the probability $P(w, t)$ with 
 
-    ​$P(w,d) = P(t|d) *P(w|t)$
+    $P(w,d) = P(t|d) *P(w|t)$
 
 #### Preliminary results
 
@@ -95,14 +95,14 @@ LDA is to find topics a document belongs to, based on the pre-processed words in
 
 - Week 10: Data Treatment(filtering, exploring the dataset)
 - Week 11: Initial Analyzation (Simple calculation and NLP treatment on the datasets)
-- Week 12: Further Analyzation (Training the prediction model)
-- Week 13: Data Visualization and Text Writing
+- Week 12: Further Analyzation (Training the prediction model) and Start to set up our website
+- Week 13: Data Visualization and Text Writing in the website
 - Week 14: Finalization of the project
 
 
 ## Organization within the team:
 
-- Yifei Song: Initial and Further Analyzation, Data Visualization
-- Haoming Lin: Initial and Further Analyzation, Data Visualization
-- Grave de Peralta Gonzalez Rolando:
-- Ruiqi Yu: Initial Analyzation, Data Visualization, Text Writing
+- Yifei Song: Data Pre-processing, Plot Summary Analyzation with LDA, Trend Prediction, Data Visualization
+- Haoming Lin: Data Pre-processing, Factors Significance Analyzation, Data Visualization
+- Grave de Peralta Gonzalez Rolando: Website Design, Story-telling Writing, Data Visualization
+- Ruiqi Yu: Initial Analyzation, Movie Name Analyzation, Data Visualization, Story-telling Writing
