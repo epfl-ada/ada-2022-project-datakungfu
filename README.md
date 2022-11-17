@@ -1,4 +1,4 @@
-# Project 2 of Applied Data Analysis(CS-401)
+# Movie Company: How to increase the revenue?
 
 
 | Student's name | SCIPER |
@@ -9,20 +9,20 @@
 |Ruiqi Yu |340546 |
 
 
-## Title(1000 words in total)
+## Abstract
+The film industry market size can be up to hundred billion USD every year, which is a big part of economy, and proper data analysis can benefit its growth. 
+For investors, the level of box office is the criterion for the success of the movie, and the correct predictions of revenue help the better allocation of investment capital and higher income of the film industry. 
+Our goal is to study some factors related to film revenue and then use them to create a rough forecasting model for movie revenues, which will help the potential investors have better understanding of films revenue. 
 
-### Abstract: 
-A 150 word description of the project idea and goals. What’s the motivation behind your project? What story would you like to tell, and why?
+## Research Questions
+ How do the factors(movie country, language, etc.) influence the film revenue?
+ What is the expectation of a new movie revenue given some details?
 
-### Research Questions:
- A list of research questions you would like to address during the project.
+## Proposed additional datasets
 
-### Proposed additional datasets (if any):
- List the additional dataset(s) you want to use (if any), and some ideas on how you expect to get, manage, process, and enrich it/them. Show us that you’ve read the docs and some examples, and that you have a clear idea on what to expect. Discuss data size and format if relevant. It is your responsibility to check that what you propose is feasible.
+## Methods
 
-### Methods
+## Proposed timeline
 
-### Proposed timeline
-
-### Organization within the team: 
+## Organization within the team: 
 A list of internal milestones up until project Milestone P3.
