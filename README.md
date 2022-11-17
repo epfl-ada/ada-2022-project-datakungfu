@@ -10,11 +10,13 @@
 
 
 ## Abstract
-The film industry market size can be up to hundred billion USD every year, which is a big part of economy, and proper data analysis can benefit its growth. 
-For investors, the level of box office is the criterion for the success of the movie, and the correct predictions of revenue help the better allocation of investment capital and higher income of the film industry. 
-Our goal is to study some factors related to film revenue and then use them to create a rough forecasting model for movie revenues, which will help the potential investors have better understanding of films revenue. 
+
+The film industry market size can be up to two hundred billion USD every year, which is a big part of the economy, and proper data analysis can benefit its growth.
+For investors, the level of box office is the criterion for the success of the movie, and the correct predictions of revenue help the better allocation of investment capital and higher income of the film industry.
+Our goal is to study some factors related to film revenue and then use them to create a rough forecasting model for movie revenues, which will help potential investors have a better understanding of film revenue not only in the past but also in the future.
 
 ## Research Questions
+
 - How do the factors(movie country, language, etc.) influence the film revenue?
 - What is the expectation of a new movie revenue given some details?
 - What are the hottest, or most recurring, topics in the film industry in the past decades?
@@ -32,13 +34,11 @@ Our goal is to study some factors related to film revenue and then use them to c
 
 We take into account that income is not the same as an indicator such as a score, but its value fluctuates depending on the era, country and special events, which means that economic activities such as inflation have to be taken into account. Therefore, we created a new column "Revenue_ratio", which represents the percentage of a movie's revenue in the total box office revenue of the year. This can reduce the difference in revenue due to inflation to a certain extent.
 
-
-
 #### Plot Summary Processing
 
 We treat all the plot summary data as a two-dimensional list, and the plot summary of each movie is a list on the second dimension.
 
-In order to extract the topic of the movie through the analysis of the movie plot summary, we do the following processing of the movie plot summaries:
+To extract the topic of the movie through the analysis of the movie plot summary, we do the following processing of the movie plot summaries:
 
 - Tokenization - Split the plot summary into the smallest unit of word, "token".
 - Stopwords - Remove punctuation symbols, special characters and common words.
@@ -59,27 +59,25 @@ We make a **wordcloud** with all movie names, which indicates the hottest words.
 
 <img src="/Users/yfsong/Desktop/EPFL/Ada/ADA2022/Project/ada-2022-project-datakungfu/images/movie_title1.png" alt="movie_title1" style="zoom:80%;" />
 
-
-
 ### Topic Retrieval
 
 Since the plot summary is an unlabeled dataset, we decide to use **LDA**, an unsupervised learning algorithm, to implement topic retrieval and analysis. 
 
 #### LDA Detail
 
-The aim of LDA is to find topics a document belongs to, based on the pre-processed words in it:
+LDA(Latent Dirichlet allocation) is to find topics a document belongs to, based on the pre-processed words in it:
 
 - Go through each document and randomly assign each word in the document to one of $k$ topics ($k$ is chosen beforehand).
 
 - For each document $d$, go through each word $w$ and compute :
 
-  -  $P(t|d)$ : the proportion of words in document $d$ that are assigned to topic $t$.
+  - $P(t|d)$ : the proportion of words in document $d$ that are assigned to topic $t$.
 
   - $P(w|t$) : the proportion of assignments to topic *t* over all documents that come from this word *w*. Tries to capture how many documents are in topic $t$ because of word $w$.
 
   - Update the probability $P(w, t)$ with 
 
-    ​																$$P(w,d) = P(t|d) *P(w|t)$$
+    ​$P(w,d) = P(t|d) *P(w|t)$
 
 #### Preliminary results:
 
@@ -95,7 +93,16 @@ The aim of LDA is to find topics a document belongs to, based on the pre-process
 
 ## Proposed timeline
 
+- Week 10: Data Treatment(filtering, exploring the dataset)
+- Week 11: Initial Analyzation (Simple calculation and NLP treatment on the datasets)
+- Week 12: Further Analyzation (Training the prediction model)
+- Week 13: Data Visualization and Text Writing
+- Week 14: Finalization of the project
 
 
-## Organization within the team: 
-A list of internal milestones up until project Milestone P3.
+## Organization within the team:
+
+- Yifei Song: Initial and Further Analyzation, Data Visualization
+- Haoming Lin: Initial and Further Analyzation, Data Visualization
+- Grave de Peralta Gonzalez Rolando:
+- Ruiqi Yu: Initial Analyzation, Data Visualization, Text Writing
