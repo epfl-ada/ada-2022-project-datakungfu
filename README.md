@@ -1,6 +1,5 @@
 # Movie Company: How to increase the revenue?
 
-
 | Student's name | SCIPER |
 | -------------- | ------ |
 |Yifei Song |335187 |
@@ -8,23 +7,24 @@
 |Grave de Peralta Gonzalez Rolando  |?? |
 |Ruiqi Yu |340546 |
 
-
 ## Abstract
 
-The film industry market size can be up to two hundred billion USD every year, which is a big part of the economy, and proper data analysis can benefit its growth.
+The global film industry market size can be up to two hundred billion USD every year, which is a big part of the economy, and proper data analysis can benefit its growth.
 For investors, the level of box office is the criterion for the success of the movie, and the correct predictions of revenue help the better allocation of investment capital and higher income of the film industry.
-Our goal is to study some factors related to film revenue and then use them to create a rough forecasting model for movie revenues, which will help potential investors have a better understanding of film revenue not only in the past but also in the future.
+
+Our goal is to study some factors(movie country, language, genres, characters, etc.) related to film revenue and then use the conclusions to create a rough forecasting model for movie revenues, which will help potential investors have a better understanding of film revenue not only in the past but also in the future.
+In our data story, readers can understand what and how impacts film revenue, and the development track of film in the past and future.
 
 ## Research Questions
 
-- How do the factors(movie country, language, etc.) influence the film revenue?
-- What is the expectation of a new movie revenue given some details?
+- How do the factors influence the film revenue?
+- What is the expectation of a new movie revenue given the aforementioned factors' information?
 - What are the hottest, or most recurring, topics in the film industry in the past decades?
 - How will the trend of the film industry change in the coming period?
 
 ## Proposed additional datasets
 
-- [Name Corpus](https://www.kaggle.com/datasets/nltkdata/names?resource=download) - a dataset containing male and female names, which is used to handle plot summary topic analysis tasks.
+- [Name Corpus](https://www.kaggle.com/datasets/nltkdata/names?resource=download) - a dataset containing male and female names, which is used to handle plot summary topic analysis tasks such as gendering characters.
 
 ## Methods
 
@@ -61,11 +61,11 @@ We make a **wordcloud** with all movie names, which indicates the hottest words.
 
 ### Topic Retrieval
 
-Since the plot summary is an unlabeled dataset, we decide to use **LDA**, an unsupervised learning algorithm, to implement topic retrieval and analysis. 
+Since the plot summary is an unlabeled dataset, we decide to use **LDA**(Latent Dirichlet allocation), an unsupervised learning algorithm, to implement topic retrieval and analysis. 
 
 #### LDA Detail
 
-LDA(Latent Dirichlet allocation) is to find topics a document belongs to, based on the pre-processed words in it:
+LDA is to find topics a document belongs to, based on the pre-processed words in it:
 
 - Go through each document and randomly assign each word in the document to one of $k$ topics ($k$ is chosen beforehand).
 
@@ -79,7 +79,7 @@ LDA(Latent Dirichlet allocation) is to find topics a document belongs to, based 
 
     ​$P(w,d) = P(t|d) *P(w|t)$
 
-#### Preliminary results:
+#### Preliminary results
 
 <u>In milestone 2, we used only a partial sample for preliminary testing. We will make further refinements and adjustments in the final version.</u>
 
