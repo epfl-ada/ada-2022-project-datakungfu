@@ -1,4 +1,4 @@
-# Movie Company: How to increase the revenue?
+# Data-guided Movie Industry - Statistical Interpretation and Predictions
 
 | Student's name | SCIPER |
 | -------------- | ------ |
