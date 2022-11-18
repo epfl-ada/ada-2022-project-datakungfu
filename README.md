@@ -45,7 +45,45 @@ To extract the topic of the movie through the analysis of the movie plot summary
 - Name Removing - Remove all common English names in our plot summary by using the additional dataset \<Name Corpus\>.
 - Dictionary and corpus creation - Create word dictionary with our filtered tokens and create corpus by using [TF-IDF](https://fr.wikipedia.org/wiki/TF-IDF#:~:text=Le%20TF%2DIDF%20(de%20l,dans%20la%20fouille%20de%20textes)).
 
+### Overview of Different Factors
+Movie revenue could be affected by different factors, such as languages, country in which the movie is released, actors taking part in. 
+By dividing the data into different subgroups according to different values of a feature, we show a difference in movie revenue these subgroups. 
 
+Further analysis will focus on statistical significance of these differences. 
+Secondly, there are certainly some features we can extratc from actors of a movie. 
+However, according to our preliminary analysis, the impact of such factors on the revenue is not yet clear. 
+For further analysis, we will consider combining different factors instead of looking at them separately one by one.
+Some simple machine learning models, such as linear regression, tree-based methods may be used in this case. 
+Since these simple models are also interpretable, much more detail related to the importance of different factor could also be deduced from. 
+
+#### Preliminary results
+
+The distribution of the movie revenue is high skewed, as expected. 
+But the most important information to retain is 
+the mean: $4.84\times10^7$ and the median: $1.09\times10^7$. 
+
+<img src="./images/revenue_distr.png" />
+
+We group movies by their release country, ignoring those released in more than two countries.
+And by computing the average movie revenue for every country, the top 15 is shown as follows. 
+
+<img src="./images/revenue_country.png" />
+
+The top 12 (until France) has a average renenue of more than $2\times10^7$, which is twice the median revenue overall. 
+The average movie revenue for Switzerland is the highest, twice the average in China, is how can we explain this difference?
+And what can we draw from that. 
+
+We did the same thing for different genres. 
+Except this time, the same with different genre tags will be taken into account for each of these genres. 
+The top 15 are shown in the following barplot. 
+
+<img src="./images/revenue_genre.png" />
+
+These averages seem to be much higher than the median value overall, and the top 1 "coming-of-age film" is high than the mean overall. ($4.84\times10^7$)
+The natural question we can ask is: are these factors really statistically significant enough to explain the difference in revenue, or its only due to the randomness of data? 
+And many hidden variables may exist leading to such result here, actors coudl be one of them. 
+In addition, the same genre may be received differently in different countries and in different eras. 
+These will lead us to further analysis. 
 
 ### Hottest Word in Movie Title
 
