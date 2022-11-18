@@ -79,7 +79,7 @@ The top 15 are shown in the following barplot.
 
 <img src="./images/revenue_genre.png" />
 
-These averages seem to be much higher than the median value overall, and the top 1 "coming-of-age film" is high than the mean overall($4.84\times10^7$).
+These averages seem to be much higher than the median value overall, and the top 1 "coming-of-age film" is high than the mean overall( $4.84\times10^7$ ).
 The natural question we can ask is: are these factors statistically significant enough to explain the difference in revenue, or it is only due to the randomness of data?
 And many hidden variables may exist leading to such a result here, actors could be one of them.
 In addition, the same genre may be received differently in different countries and in different eras.
@@ -99,7 +99,7 @@ We make a **wordcloud** with all movie names, which indicates the hottest words.
 
 ### Topic Retrieval
 
-Since the plot summary is an unlabeled dataset, we decide to use **LDA**(Latent Dirichlet allocation), an unsupervised learning algorithm, to implement topic retrieval and analysis. 
+Since the plot summary is an unlabeled dataset, we decide to use **LDA**(Latent Dirichlet allocation), an unsupervised learning algorithm, to implement topic retrieval and analysis.
 
 #### LDA Detail
 
@@ -136,7 +136,6 @@ LDA is to find topics a document belongs to, based on the pre-processed words in
 - Week 12: Further Analyzation (Training the prediction model) and Start to set up our website
 - Week 13: Data Visualization and Text Writing in the website
 - Week 14: Finalization of the project
-
 
 ## Organization within the team:
 
