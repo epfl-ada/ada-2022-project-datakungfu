@@ -9,22 +9,19 @@
 
 ## Abstract
 
-The global film industry market size can be up to two hundred billion USD every year, which is a big part of the economy, and proper data analysis can benefit its growth.
-For investors, the level of box office is the criterion for the success of the movie, and the correct predictions of revenue help the better allocation of investment capital and higher income of the film industry.
+Due to its cultural features, the film industry presents complexity, which can be seen through several film factors. In our data story, we will investigate the development history of film and then the key to extraordinary films from the perspective of the film factors, and based on these findings, we will make some predictions. Our story will make you know the past and future of the film industry in one novel sight.
 
-Our goal is to study some factors(movie country, language, genres, characters, etc.) related to film revenue and then use the conclusions to create a rough forecasting model for movie revenues, which will help potential investors have a better understanding of film revenue not only in the past but also in the future.
-In our data story, readers can understand what and how impacts film revenue, and the development track of film in the past and future.
+Our goal is to: 1) learn the development of the film industry from different perspectives, 2) investigate some critical factors of high-rating films, and then get one prediction model using the factors.
 
 ## Research Questions
 
-- How do the factors influence the film revenue?
-- What is the expectation of a new movie revenue given the aforementioned factors' information?
-- What are the hottest, or most recurring, topics in the film industry in the past decades?
-- How will the trend of the film industry change in the coming period?
+- How is the development of the film industry concerning one specific factors?
+- How do factors influence the film rating?
+- What is a new movie revenue expectation given the factors above' information?
 
-## Proposed additional datasets
+## Additional datasets
 
-- [Name Corpus](https://www.kaggle.com/datasets/nltkdata/names?resource=download) - a dataset containing male and female names, which is used to remove common English names when we do plot summary topic analysis tasks. High-frequency English names are similar to stopwords in text analysis. In order not to have people's names without real meaning in the analysis results, we need to remove them from the text in the pre-processing stage.
+TODO
 
 ## Methods
 
@@ -137,9 +134,9 @@ LDA is to find topics a document belongs to, based on the pre-processed words in
 - Week 13: Data Visualization and Text Writing in the website
 - Week 14: Finalization of the project
 
-## Organization within the team:
+## Team Members' Contribution
 
-- Yifei Song: Data Pre-processing, Plot Summary Analyzation with LDA, Trend Prediction, Data Visualization
-- Haoming Lin: Data Pre-processing, Factors Significance Analyzation, Data Visualization
-- Grave de Peralta Gonzalez Rolando: Website Design, Story-telling Writing, Data Visualization
-- Ruiqi Yu: Initial Analyzation, Movie Name Analyzation, Data Visualization, Story-telling Writing
+- Yifei Song: Data Pre-processing, Trend Prediction, Data Visualization
+- Haoming Lin: Data Pre-processing, Data Visualization
+- Grave de Peralta Gonzalez Rolando: Website Design, Story-telling Writing
+- Ruiqi Yu: Initial Analyzation,  Story-telling Writing
