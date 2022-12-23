@@ -7,10 +7,6 @@
 | Grave de Peralta Gonzalez Rolando | 362607 |
 | Ruiqi Yu                          | 340546 |
 
-## Data Story
-
-Please visit our story [website](https://rolandogdp.github.io/ADA-project-website/) here.
-
 ## Abstract
 
 Due to its cultural features, the film industry presents complexity, which can be seen through several film factors. In our data story, we will investigate the development history of film and then the key to extraordinary films from the perspective of the film factors. Based on these findings, we will make some predictions. Our story will make you know the past and future of the film industry in one novel sight.
@@ -81,14 +77,14 @@ We observe that many movie features have been evolving in history, even in a sho
 
 While for some numerical data, such as genre frequency in a year, the evolution in the time can be visualized by a single scatter plot. For other data, such as "hottest word" in the movie title, it is much more difficult to visualize its evolution. Therefore we decided to cut the whole history into three periods before computing three static WordClouds to demonstrate the evolution. 
 
-### Evolutions of Features about high-rated movies
+### 4. Evolutions of Features about high-rated movies
 
 In this step, we focus on the characteristics that high-rated movies have.
 
 We depict the relationship between ratings, popularity, and budget using scatter plots pie charts. We observe that there is no clear linear relationship between ratings and popularity, there are some excellent movies that are not popular with the public, and a significant investment in movies does not necessarily translate into a good movie reputation.
 Next, we focused on the top 150 rated movies and analyzed their genres and story themes. We observed that these excellent movies were dominated by drama and theater, and we guessed that movies that can make people feel good are more likely to get high ratings. We used the LDA algorithm to extract themes from these movies. Many families, affection, and love keywords appeared in the most common themes, indicating that emotion-based storylines are more likely to move people.
 
-### Prediction of budget
+### 5. Prediction of budget
 
 After observing the historical trends in the development of the film industry and studying the qualities associated with the best films, we continued to explore the film industry's future. With the help of the OLS algorithm, we have made regression forecasts for movie budgets. Our analysis will help filmmakers budget adequately for their money. We selected four variables; you can input your expected rating of the movie, the movie's length, the rating, and the popularity to get the movie's budget.
 
