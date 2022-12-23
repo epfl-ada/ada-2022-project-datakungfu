@@ -7,9 +7,9 @@
 | Grave de Peralta Gonzalez Rolando | 362607 |
 | Ruiqi Yu                          | 340546 |
 
-## Website
+## Data Story
 
-Here is our [website](https://rolandogdp.github.io/ADA-project-website/).
+Please visit our story [website](https://rolandogdp.github.io/ADA-project-website/) here. 
 
 ## Abstract
 
