@@ -1,11 +1,11 @@
-# Data-guided Movie Industry - Statistical Interpretation and Predictions
+# The Past and Future of the Film Industry
 
-| Student's name | SCIPER |
-| -------------- | ------ |
-|Yifei Song |335187 |
-|Haoming Lin |351632 |
-|Grave de Peralta Gonzalez Rolando  |362607 |
-|Ruiqi Yu |340546 |
+| Student's name                    | SCIPER |
+| --------------------------------- | ------ |
+| Yifei Song                        | 335187 |
+| Haoming Lin                       | 351632 |
+| Grave de Peralta Gonzalez Rolando | 362607 |
+| Ruiqi Yu                          | 340546 |
 
 ## Abstract
 
@@ -17,126 +17,89 @@ Our goal is to: 1) learn the development of the film industry from different per
 
 - How is the development of the film industry concerning one specific factors?
 - How do factors influence the film rating?
-- What is a new movie revenue expectation given the factors above' information?
+- What is a new movie budget expectation given the factors above information?
 
 ## Additional datasets
 
-TODO
+- [Name Corpus](https://www.kaggle.com/datasets/nltkdata/names?resource=download) - a dataset containing male and female names, which is used to remove common English names when we do plot summary topic analysis tasks. High-frequency English names are similar to stopwords in text analysis. In order not to have people's names without real meaning in the analysis results, we need to remove them from the text in the pre-processing stage.
+
+- [The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset) - these files metadata for all 45,000 movies listed in the Full MovieLens Dataset. In particular, we can find statistics such movie rating, popularity and genres. The dataset is not completely uploaded on this repository since it's too big. Please check the previous link if you need to download it. 
+
+## External libraries
+
+- statsmodels
+- seaborn
+- nltk
+- gensim
+- wordcloud
+- PIL
+- pyLDAvis
+- pyechats
 
 ## Methods
 
-### Data Pre-processing
+### 1. Data Pre-processing and Feature Extraction
 
-#### Revenue Processing
+<!-- #### Revenue Processing
 
-We take into account that income is not the same as an indicator such as a score, but its value fluctuates depending on the era, country and special events, which means that economic activities such as inflation have to be taken into account. Therefore, we created a new column "Revenue_ratio", which represents the percentage of a movie's revenue in the total box office revenue of the year. This can reduce the difference in revenue due to inflation to a certain extent.
+We take into account that income is not the same as an indicator such as a score, but its value fluctuates depending on the era, country and special events, which means that economic activities such as inflation have to be taken into account. Therefore, we created a new column "Revenue_ratio", which represents the percentage of a movie's revenue in the total box office revenue of the year. This can reduce the difference in revenue due to inflation to a certain extent. -->
 
-#### Plot Summary Processing
+#### Text Processing
+
+Some of our language models, such as LDA, do not perform well on raw text. Therefore, text data, including movie plot summary and movie title need to be cleaned. Here we present the process of our cleaning method. 
 
 We treat all the plot summary data as a two-dimensional list, and the plot summary of each movie is a list on the second dimension.
 
 To extract the topic of the movie through the analysis of the movie plot summary, we do the following processing of the movie plot summaries:
 
-- Tokenization - Split the plot summary into the smallest unit of word, "token".
-- Stopwords - Remove punctuation symbols, special characters and common words.
-- Name Removing - Remove all common English names in our plot summary by using the additional dataset \<Name Corpus\>.
-- Dictionary and corpus creation - Create word dictionary with our filtered tokens and create corpus by using [TF-IDF](https://fr.wikipedia.org/wiki/TF-IDF#:~:text=Le%20TF%2DIDF%20(de%20l,dans%20la%20fouille%20de%20textes)).
+1. Punctuation Removing - remove punctuation symbols, special characters and
+2. Tokenization - Split the plot summary into the smallest unit of word, "token".
+3. Stemming - reduce morphorlogy of words 
+4. Stopwords Removing - Remove common and less meaningful words.
+5. Name Removing - Remove all common English names in our plot summary by using the additional dataset \<Name Corpus\>.
+6. Dictionary and corpus creation - Create word dictionary with our filtered tokens and create corpus by using [TF-IDF](https://fr.wikipedia.org/wiki/TF-IDF#:~:text=Le%20TF%2DIDF%20(de%20l,dans%20la%20fouille%20de%20textes)).
 
-### Overview of Different Factors
-Movie revenue could be affected by different factors, such as language,  the country in which the movie is released, and actors taking part.
-By dividing the data into different subgroups according to different values of a feature, we show a difference in movie revenue in these subgroups.
+#### Json-type String
 
-Further analysis will focus on the statistical significance of these differences.
-Secondly, there are certainly some features we can extract from actors of a movie.
-However, according to our preliminary analysis, the impact of such factors on the revenue is not yet clear.
-For further analysis, we will consider combining different factors instead of looking at them separately one by one.
-Some simple machine learning models, such as linear regression, and tree-based methods may be used in this case.
-Since these simple models are also interpretable, much more detail related to the importance of different factors could also be deduced from them.
+Some features in the dataset are string representation of json objects from which could be extracted interesting features such as movie genres, actor, director. We use Python built-in library ast to read these string into Python objects.
 
-#### Preliminary results
+### 2. Overview of Different Metadata
 
-The distribution of the movie revenue is highly skewed, as expected.
-But the most important information to retain is
-the mean: $4.84\times10^7$ and the median: $1.09\times10^7$.
+A movie is characterized by different features such as its budget, genre, actor, rating, popularity. 
+Many different values are possible and most of these features are not uniformly distributed over its possible values.
+In this step, most of analysis are based on the distribution of possible values for each feature. 
+By this, we could have a general idea about which kind of movie are popular.
 
-<img src="./images/revenue_distr.png" />
+### 3. Evolution of Features over time
 
-We group movies by their release country, ignoring those released in more than two countries.
-And by computing the average movie revenue for every country, the top 15 are shown as follows.
+In this step, we take into account movie release year to get more insights about evolution of movie industry. 
+We observe that that many features about a movie have been evolving in the history. Even in a short period from 1980 to 2020. Considering the number of samples in different periods in the history, we decided to focus on the period from 1920 to 2020 where data samples is sufficient enough to make reasonable statistics. 
 
-<img src="./images/revenue_country.png" />
+While for some numerical data, such frequency of genre in a year, the evolution in the time can be visualized by a single scatter plot. For other data such as "hottest word" in movie title, it is much more difficult to visualize its evolution. Therefore we decided to cut the hole history into three periods before compute three static wordclouds to demonstrate the evolution. 
 
-The top 12 (until France) has an average revenue of more than $2\times10^7$, which is twice the median revenue overall.
-The average movie revenue in Switzerland is the highest, twice the average in China, how can we explain this difference?
-And what can we draw from that?
+### Evolutions of Features about high-rated movies
 
-We did the same thing for different genres.
-Except for this time, the same with different genre tags will be taken into account for each of these genres.
-The top 15 are shown in the following barplot.
+In this step, we focus on the characteristics that high-rated movies have.
 
-<img src="./images/revenue_genre.png" />
+We depict the relationship between ratings and popularity, budget by means of scatter plots, pie charts. We observe that there is no clear linear relationship between ratings and popularity, there are some very good movies that are not popular with the public, and a large investment in movies does not necessarily translate into good movie reputation.
+Next, we focused on the top 150 rated movies and analyzed their genres and story themes. We observed that these excellent movies were dominated by drama and theater, and we guessed that movies that can make people feel good are more likely to get high ratings. We used the LDA algorithm to extract themes from these movies, and many keywords of family, affection, and love appeared in the most common themes, indicating that emotion-based storylines are more likely to move people.
 
-These averages seem to be much higher than the median value overall, and the top 1 "coming-of-age film" is high than the mean overall( $4.84\times10^7$ ).
-The natural question we can ask is: are these factors statistically significant enough to explain the difference in revenue, or it is only due to the randomness of data?
-And many hidden variables may exist leading to such a result here, actors could be one of them.
-In addition, the same genre may be received differently in different countries and in different eras.
-These will lead us to further analysis.
 
-### Hottest Word in Movie Title
 
-We would like to know which words appear in high frequency in all the movie names. This can reflect the trend of movie naming and the underlying movie topic.
 
-<u>In further research, we will also examine whether the naming style of the films changed from period to period.</u>
+### Prediction of budget
 
-#### Preliminary result
+After observing the historical trends in the development of the film industry and studying the qualities associated with the best films, we continued to explore the future of the film industry. With the help of OLS algorithm, we have made regression forecasts for movie budgets. We hope that our analysis will help filmmakers budget adequately for their money. We selected four variables, you can input your expected rating of the movie, the length of the movie, the rating, and the popularity to get the budget of this movie.
 
-We make a **wordcloud** with all movie names, which indicates the hottest words.
 
-<img src="./images/movie_title1.png" />
 
-### Topic Retrieval
 
-Since the plot summary is an unlabeled dataset, we decide to use **LDA**(Latent Dirichlet allocation), an unsupervised learning algorithm, to implement topic retrieval and analysis.
-
-#### LDA Detail
-
-LDA is to find topics a document belongs to, based on the pre-processed words in it:
-
-- Go through each document and randomly assign each word in the document to one of $k$ topics ($k$ is chosen beforehand).
-
-- For each document $d$, go through each word $w$ and compute :
-
-  - $P(t|d)$ : the proportion of words in document $d$ that are assigned to topic $t$.
-
-  - $P(w|t$) : the proportion of assignments to topic *t* over all documents that come from this word *w*. Tries to capture how many documents are in topic $t$ because of word $w$.
-
-  - Update the probability $P(w, t)$ with 
-
-    $P(w,d) = P(t|d) *P(w|t)$
-
-#### Preliminary results
-
-<u>In milestone 2, we used only a partial sample for preliminary testing. We will make further refinements and adjustments in the final version.</u>
-
-- Direct output: We obtained the k most relevant topics, along with the keywords in each topic and their scores.
-
-  <img src="./images/m2_LDAres.png"  />
-
-- Visualization: We get more intuitive dynamic results with the help of the **pyLDAvis** package. (This result is not directly displayed on github, due to the dynamic image)
-
-  ![image-vis_LDA](./images/m2_pyLDAvis.png)
-
-## Proposed timeline
-
-- Week 10: Data Treatment(filtering, exploring the dataset)
-- Week 11: Initial Analyzation (Simple calculation and NLP treatment on the datasets)
-- Week 12: Further Analyzation (Training the prediction model) and Start to set up our website
-- Week 13: Data Visualization and Text Writing in the website
-- Week 14: Finalization of the project
 
 ## Team Members' Contribution
 
-- Yifei Song: Data Pre-processing, Trend Prediction, Data Visualization
-- Haoming Lin: Data Pre-processing, Data Visualization
+- Yifei Song: Data Pre-processing, Budget Prediction, Data Visualization, Website Design
+- Haoming Lin: Data Pre-processing, Data Visualization, README
 - Grave de Peralta Gonzalez Rolando: Website Design, Story-telling Writing
 - Ruiqi Yu: Initial Analyzation,  Story-telling Writing
+
+
