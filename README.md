@@ -90,7 +90,7 @@ Next, we focused on the top 150 rated movies and analyzed their genres and story
 
 ### Prediction of budget
 
-After observing the historical trends in the development of the film industry and studying the qualities associated with the best films, we continued to explore the future of the film industry. With the help of OLS algorithm, we have made regression forecasts for movie budgets. We hope that our analysis will help filmmakers budget adequately for their money. We selected four variables, you can input your expected rating of the movie, the length of the movie, the rating, and the popularity to get the budget of this movie.
+After observing the historical trends in the development of the film industry and studying the qualities associated with the best films, we continued to explore the future of the film industry. With the help of OLS algorithm, we have made regressions on the expected rating, the runtime, tjhe release year and the expected popularity of the movie for movie budgets. We hope that our analysis will help filmmakers budget adequately for their money.  You can input your expected data into our predition calculator to get the budget of the movie.
 
 ## Team Members' Contribution
 
