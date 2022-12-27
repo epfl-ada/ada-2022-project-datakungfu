@@ -7,6 +7,10 @@
 | Grave de Peralta Gonzalez Rolando | 362607 |
 | Ruiqi Yu                          | 340546 |
 
+## Data Story
+
+Please visit our story [website](https://rolandogdp.github.io/ADA-project-website/) here.
+
 ## Abstract
 
 Due to its cultural features, the film industry presents complexity, which can be seen through several film factors. In our data story, we will investigate the development history of film and then the key to extraordinary films from the perspective of the film factors. Based on these findings, we will make some predictions. Our story will make you know the past and future of the film industry in one novel sight.
